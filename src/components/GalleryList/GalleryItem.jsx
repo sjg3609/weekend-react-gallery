@@ -3,7 +3,7 @@ import axios from 'axios';
 function GalleryItem({images, galleryList, fetchGallery}) {
 
     const updateLikes = (e) => {
-        axios.put(`/like/${images.id}`).then((response) => {
+        axios.put(`/gallery/like/${images.id}`).then((response) => {
             console.log(response);
             fetchGallery();
         }).catch((error) => {
