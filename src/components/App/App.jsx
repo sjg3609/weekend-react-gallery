@@ -19,8 +19,6 @@ function App() {
              setGalleryList={setGalleryList}
           />
         </div>
-        <img src="images/goat_small.jpg"/>
-        <img src="imagine/Vinnie_Cat.jpg"/>
       </div>
     );
 }

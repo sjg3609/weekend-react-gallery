@@ -20,12 +20,14 @@ function GalleryList({galleryList, setGalleryList}) {
 
     return (
         <div>
-            {JSON.stringify(galleryList)}
+            {/* Tested to see if it looped over the gallery */}
+            {/* {JSON.stringify(galleryList)} */}
             {
                  galleryList.map((images) => (
                     <GalleryItem 
                         images={images}
                         galleryList={galleryList}
+                        fetchGallery={fetchGallery}
                      />
                  ))
 
