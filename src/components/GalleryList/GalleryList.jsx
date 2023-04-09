@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import GalleryItem from './GalleryItem';
 
 function GalleryList({galleryList, setGalleryList}) {
 
@@ -19,11 +20,19 @@ function GalleryList({galleryList, setGalleryList}) {
 
     return (
         <div>
-        {
-            galleryList.map((images) => (
-                <img key={images.id} src={images.path}/> 
-            ))
-        }
+            {JSON.stringify(galleryList)}
+            {
+                 galleryList.map((images) => (
+                    <GalleryItem 
+                        images={images}
+                        galleryList={galleryList}
+                     />
+                 ))
+
+            }
+           
+            
+            
         </div>
     )
 }
