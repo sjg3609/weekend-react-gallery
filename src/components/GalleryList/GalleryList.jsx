@@ -19,7 +19,7 @@ function GalleryList({galleryList, setGalleryList}) {
       }, []);
 
     return (
-        <div>
+        <div className="galleryList">
             {/* Tested to see if it looped over the gallery */}
             {/* {JSON.stringify(galleryList)} */}
             {
