@@ -20,7 +20,7 @@ function GalleryItem({images, fetchGallery}) {
         console.log('Does this work???');
         if (toggle === true) {
             return (
-                <div style={{width: 200, height: 200, backgroundColor: 'gray'}}>
+                <div style={{width: 200, height: 200, backgroundColor: 'gray', color: 'white', textAlign: 'center'}}>
                     {images.description}
                 </div>
             );
@@ -30,11 +30,15 @@ function GalleryItem({images, fetchGallery}) {
     console.log(toggle);
     return (
         <div className="galleryItem">
-        { <img key={images.id} src={images.path} onClick={() => setToggle(!toggle)}>{showDescription()}</img> }
+        { <img key={images.id} src={images.path} onClick={() => setToggle(!toggle)}></img> }
         <br/>
         <button onClick={(e) => updateLikes(e)}>Like</button>  {images.likes} people like this!
         <br/>
+        {
+            showDescription()
+        }
         </div>
+        
     )
 }
 
