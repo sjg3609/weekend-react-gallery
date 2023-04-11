@@ -20,3 +20,14 @@
   margin: 40px;
   gap: 40px;
 }
+
+.galleryItem {
+  text-align: center;
+  justify-content: center;
+}
+
+.galleryDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

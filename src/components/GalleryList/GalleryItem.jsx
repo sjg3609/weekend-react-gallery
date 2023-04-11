@@ -25,8 +25,8 @@ function GalleryItem({images, fetchGallery}) {
                 </div>
             );
         }  else if (toggle === true) {
-            return(
-                 <div className="galleryItem" style={{width: 200, height: 200, backgroundColor: 'gray', color: 'white',}} onClick={() => setToggle(!toggle)}>
+            return (
+                 <div className="galleryDescription" style={{width: 200, height: 200, backgroundColor: 'black', color: 'white',}} onClick={() => setToggle(!toggle)}>
                     {images.description}
                 </div>
             );
@@ -38,7 +38,7 @@ function GalleryItem({images, fetchGallery}) {
         <div className="galleryItem">
          { showDescription() }
         <br/>
-        <button onClick={(e) => updateLikes(e)}>Like</button><br/>{images.likes} people like this!
+        <button onClick={(e) => updateLikes(e)}>Like</button>  {images.likes} people like this!
         <br/>
         {/* Was testing to see if it created a new div with the descriptions */}
         {/* {
