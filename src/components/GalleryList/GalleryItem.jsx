@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function GalleryItem({images, galleryList, fetchGallery}) {
+function GalleryItem({images, fetchGallery}) {
 
     const [toggle, setToggle] = useState(false);
 
@@ -20,16 +20,17 @@ function GalleryItem({images, galleryList, fetchGallery}) {
         console.log('Does this work???');
         if (toggle === true) {
             return (
-                <div style={{width: 200, height: 200, color: 'gray'}}>
+                <div style={{width: 200, height: 200, backgroundColor: 'gray'}}>
                     {images.description}
                 </div>
             );
         }
     }
 
+    console.log(toggle);
     return (
         <div className="galleryItem">
-        { <img key={images.id} src={images.path} onClick={showDescription}/> }
+        { <img key={images.id} src={images.path} onClick={() => setToggle(!toggle)}>{showDescription()}</img> }
         <br/>
         <button onClick={(e) => updateLikes(e)}>Like</button>  {images.likes} people like this!
         <br/>

@@ -26,7 +26,6 @@ function GalleryList({galleryList, setGalleryList}) {
                  galleryList.map((images) => (
                     <GalleryItem 
                         images={images}
-                        galleryList={galleryList}
                         fetchGallery={fetchGallery}
                      />
                  ))
