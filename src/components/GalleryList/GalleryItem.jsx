@@ -18,9 +18,15 @@ function GalleryItem({images, fetchGallery}) {
     const showDescription = () => {
         // testing to see if I can use onClick on an img tag
         console.log('Does this work???');
-        if (toggle === true) {
+        if (toggle === false) {
             return (
-                <div style={{width: 200, height: 200, backgroundColor: 'gray', color: 'white', textAlign: 'center'}}>
+                <div className="galleryItem">
+                    { <img key={images.id} src={images.path} onClick={() => setToggle(!toggle)}/> }
+                </div>
+            );
+        }  else if (toggle === true) {
+            return(
+                 <div className="galleryItem" style={{width: 200, height: 200, backgroundColor: 'gray', color: 'white',}} onClick={() => setToggle(!toggle)}>
                     {images.description}
                 </div>
             );
@@ -30,13 +36,14 @@ function GalleryItem({images, fetchGallery}) {
     console.log(toggle);
     return (
         <div className="galleryItem">
-        { <img key={images.id} src={images.path} onClick={() => setToggle(!toggle)}></img> }
+         { showDescription() }
         <br/>
-        <button onClick={(e) => updateLikes(e)}>Like</button>  {images.likes} people like this!
+        <button onClick={(e) => updateLikes(e)}>Like</button><br/>{images.likes} people like this!
         <br/>
-        {
+        {/* Was testing to see if it created a new div with the descriptions */}
+        {/* {
             showDescription()
-        }
+        } */}
         </div>
         
     )
